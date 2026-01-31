@@ -464,7 +464,7 @@ nav div:first-child::before {
     z-index: 1;
 }
 
-.maintext {;
+.maintext {
     height: 100%;
     width: 100%;
     /*background-color: var(--color-screen);*/
