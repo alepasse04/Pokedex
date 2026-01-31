@@ -14,7 +14,7 @@ export const fetchPokemons = async (setPokemons: (pokemons: Pokemon[] | ((prev: 
         const firstPokemonList = firstBatchData.results;
 
         const firstUpdatedPokemonList = await Promise.all(
-            firstPokemonList.map(async (pokemon) => {
+            firstPokemonList.map(async (pokemon: Pokemon) => {
                 const res = await fetch(pokemon.url);
                 if(!res.ok){
                     throw new Error(`Network response was not ok for ${pokemon.name}`);

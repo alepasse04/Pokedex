@@ -2,7 +2,7 @@
   "name": "pokewild",
   "private": true,
   "version": "0.0.1",
-  "homepage": "https://alepasse04.github.com/PokeWild",
+  "homepage": "https://alepasse04.github.com/Pokedex",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
