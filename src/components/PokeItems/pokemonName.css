@@ -1,0 +1,32 @@
+.pokemon-card{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /*margin-top: 24%;*/
+    /*margin-left: 15.3%;*/
+    overflow: hidden;
+}
+
+.image {
+    background-image: url('../../assets/Graphics/UI/Pokedex/icon_own.png'); /* Replace with the actual image path */
+    background-size: cover; /* Optional: to cover the entire div */
+    background-repeat: no-repeat; /* Optional: to prevent repetition */
+    height: 2.5svh;
+    width: 2.5svh;
+    flex-shrink: 0;
+}
+
+h3 {
+    margin: 0;
+    margin-top: -1.5%;
+    letter-spacing: -0.4svw;
+    margin-left: 0.5%;
+}
+
+.name {
+    margin-left: 1.5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

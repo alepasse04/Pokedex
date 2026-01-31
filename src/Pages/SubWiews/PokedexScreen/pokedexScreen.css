@@ -1,0 +1,65 @@
+.pokedex {
+    background-image: url('/src/assets/Graphics/UI/Pokedex/bg_list_over.png'); /* Replace with the actual image path */
+    background-size: cover; /* Optional: to cover the entire div */
+    background-repeat: no-repeat; /* Optional: to prevent repetition */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.BG_pokeball {
+    background-image: url('/src/assets/Graphics/UI/Pokedex/pokeball.png'); /* Replace with the actual image path */
+    background-size: cover; /* Optional: to cover the entire div */
+    background-repeat: no-repeat; /* Optional: to prevent repetition */;
+    margin-top: 14%;
+    height: 55%;
+    width: 18%;
+    /*transform: scaleX(-1);
+    /*background-size: 125% 100%; !* Scales to show 80% width */
+    background-position: 6.5% 0; /* Positions to hide left 20% */
+}
+
+.BG_list {
+    position: relative;
+    background-image: url('/src/assets/Graphics/UI/Pokedex/bg_list.png'); /* Replace with the actual image path */
+    background-size: 250%; /* Optional: to cover the entire div */
+    background-position: center;
+    margin-left: 0.8%;
+    margin-top: 10%;
+    height: 69.4%;
+    width: 37.4%;
+}
+.pkmImg {
+     margin-top: 10%;
+
+ }
+
+.list {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2%;
+}
+
+.selector {
+
+    background-image: url('/src/assets/Graphics/UI/Pokedex/cursor_list.png');
+    background-size: cover; /* Optional: to cover the entire div */
+    background-repeat: no-repeat; /* Optional: to prevent repetition */
+    position: absolute;
+    height: 5svh;
+    width: 6svh;
+    margin-left: -5.5%;
+    margin-top: 29%;
+}
+
+.identificatore {
+    margin-top: 13%;
+    margin-left: 11%;
+    width: 99%;
+}
+
+.pokemonItem {
+     height: 10%;
+     width: 100%;
+ }
