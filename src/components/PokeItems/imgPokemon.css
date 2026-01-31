@@ -3,3 +3,13 @@
     margin-top: -6%;
     transform: scale(1.2);
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .pokemon-img{
+        height: 10svh;
+        width: 5svw;
+        margin-left: 0.3svw;
+        margin-top: -1svh;
+        transform: scale(0.5);
+    }
+}

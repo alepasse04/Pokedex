@@ -34,8 +34,8 @@
     --color-light-2: #00a79d;
     --color-flash: cyan;
 
-    --input-width-pokemon: 22svh;
-    --input-width-stats: calc(var(--input-width-pokemon) / 1.6);
+    --input-width-pokemon: clamp(18svh, 22svh, 26svh);
+    --input-width-stats: clamp(12svh, 15svh, 18svh);
 }
 
 html,
@@ -439,7 +439,7 @@ nav div:first-child::before {
     width: 100%;
 }
 .main {
-    width: 70svh;
+    width: 70svw;
     height: 60svh;
     border: 0.6svh solid black;
     border-radius: 2svh;
@@ -824,5 +824,440 @@ input:focus {
 @keyframes flash {
     to {
         background-color: var(--color-flash);
+    }
+}
+
+/* Mobile Optimization - Portrait Mode */
+@media (max-width: 768px) and (orientation: portrait) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .main {
+        margin-left: 0;
+        margin-top: 18svh;
+        width: 90svw;
+        height: 39svh;
+    }
+
+    .right-screen {
+        margin-left: 0;
+        margin-top: 4svh;
+        margin-bottom: 15svh;
+        width: 90%;
+        align-items: center;
+    }
+
+    .screen {
+        width: 80svw;
+    }
+
+    .screen-buttons {
+        margin-top: 2svh;
+    }
+
+    /* Hide infoBox on vertical mobile */
+    .infoBox {
+        display: none;
+    }
+
+    footer {
+        margin-left: 0;
+    }
+
+    .footer-buttons {
+        margin-left: 0;
+    }
+
+    /* Adjust header for mobile */
+    header {
+        width: 80%;
+        left: -5svh;
+    }
+
+    /* Adjust blobs positioning */
+    .blobs {
+        top: 3svh;
+        left: 3svw;
+    }
+
+    .blobs a:first-child {
+        width: 6svh;
+    }
+
+    /* Adjust lights positioning */
+    .lights {
+        right: 5svw;
+        top: 12svh;
+    }
+
+    .lights div {
+        width: 6svh;
+    }
+}
+
+/* Mobile Landscape Mode */
+@media (max-width: 768px) and (orientation: landscape) {
+    .container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 8svh;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .main {
+        margin-left: 2svw;
+        margin-top: 0;
+        width: clamp(10svw, 20svw, 30svw);
+        height: clamp(35svh, 45svh, 55svh);
+        flex-shrink: 0;
+    }
+
+    .right-screen {
+        margin-left: 2svw;
+        margin-top: 0;
+        width: clamp(25svw, 30svw, 35svw);
+        flex-shrink: 0;
+    }
+
+    .screen {
+        width: 50%;
+        height: clamp(4svh, 5svh, 6svh);
+        font-size: clamp(1.2svh, 1.5svh, 1.8svh);
+        padding: clamp(1svh, 1.5svh, 2svh);
+    }
+
+    .screen-buttons {
+        margin-top: 1svh;
+    }
+
+    .screen-buttons button {
+        width: clamp(5svh, 6svh, 7svh);
+    }
+
+    /* Hide infoBox on landscape mobile */
+    .infoBox {
+        display: none;
+    }
+
+    /* Adjust header for landscape mobile */
+    header {
+        width: 60%;
+        height: clamp(15svh, 18svh, 20svh);
+        left: -6svh;
+        top: -5svh;
+    }
+
+    header::before {
+        height: clamp(12svh, 15svh, 18svh);
+    }
+
+    /* Adjust blobs positioning */
+    .blobs {
+        top: 2svh;
+        left: 2svw;
+    }
+
+    .blobs a:first-child {
+        width: clamp(4svh, 5svh, 6svh);
+    }
+
+    .blobs a:not(:first-child) {
+        width: clamp(1.5svh, 2svh, 2.5svh);
+        margin-left: 1svw;
+    }
+
+    /* Adjust lights positioning */
+    .lights {
+        right: 3svw;
+        top: clamp(8svh, 10svh, 12svh);
+    }
+
+    .lights div {
+        width: clamp(5svh, 6svh, 7svh);
+        height: clamp(1svh, 1.2svh, 1.4svh);
+    }
+
+    /* Adjust footer for landscape */
+    footer {
+        margin-bottom: 1svh;
+        margin-left: -5svw;
+    }
+
+    .footer-buttons {
+        margin-left: 5svw;
+    }
+
+    .footer-buttons button {
+        width: clamp(3svh, 3.5svh, 4svh);
+        font-size: clamp(2svh, 2.4svh, 2.8svh);
+    }
+
+    /* Adjust maintext font size */
+    .maintext {
+        font-size: clamp(1.5svh, 1.8svh, 2svh);
+        padding: 0.8svh;
+    }
+
+    /* Adjust input sizes */
+    input {
+        font-size: clamp(1.8svh, 2.2svh, 2.5svh);
+        padding: 0.8svh;
+        margin: 0.3svh;
+    }
+
+    .pokemonData input {
+        width: clamp(15svh, 18svh, 22svh);
+    }
+
+    .statData input {
+        width: clamp(10svh, 12svh, 15svh);
+    }
+
+    /* Adjust buttons in maintext */
+    .buttons a {
+        width: clamp(3svh, 3.5svh, 4svh);
+        font-size: clamp(2svh, 2.4svh, 2.8svh);
+        margin-left: 2svw;
+    }
+
+    /* Adjust vents */
+    .vents div {
+        width: clamp(5svh, 6svh, 7svh);
+        height: 0.3svh;
+        margin-top: 0.8svh;
+    }
+}
+
+/* Tablet and small desktop optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        justify-content: center;
+        padding: 2svh;
+    }
+
+    .main {
+        margin-left: 3svw;
+        width: clamp(25svw, 30svw, 35svw);
+        height: clamp(50svh, 55svh, 60svh);
+    }
+
+    .right-screen {
+        margin-left: 2svw;
+        width: clamp(20svw, 25svw, 30svw);
+    }
+
+    .screen-buttons{
+        font-size: 2.5svh;
+    }
+
+    .infoBox {
+        width: clamp(70%, 80%, 90%);
+        height: clamp(8svh, 10svh, 12svh);
+        margin-top: 5svh;
+    }
+
+    .screen {
+        height: clamp(5svh, 6svh, 7svh);
+        font-size: clamp(1.5svh, 1.7svh, 2svh);
+    }
+
+    .maintext {
+        font-size: clamp(1.8svh, 2svh, 2.2svh);
+    }
+
+    input {
+        font-size: clamp(2.2svh, 2.5svh, 2.8svh);
+    }
+}
+
+/* Large desktop optimization */
+@media (min-width: 1025px) {
+    .container {
+        justify-content: center;
+        padding: 3svh;
+    }
+
+    .main {
+        margin-left: 8svw;
+        width: 31.5svw;
+        height: clamp(55svh, 60svh, 65svh);
+    }
+
+    .right-screen {
+        margin-left: 4svw;
+        width: clamp(25svw, 30svw, 35svw);
+    }
+
+    .infoBox {
+        width: clamp(75%, 85%, 95%);
+        height: clamp(10svh, 12svh, 15svh);
+    }
+
+    .screen {
+        height: clamp(6svh, 7svh, 8svh);
+        font-size: clamp(1.7svh, 2svh, 2.2svh);
+    }
+
+    .maintext {
+        font-size: clamp(2svh, 2.2svh, 2.5svh);
+    }
+
+    input {
+        font-size: clamp(2.5svh, 2.8svh, 3svh);
+    }
+}
+
+/* Ultra-vertical screens optimization (like 1080x2400 phones) */
+@media (max-width: 1080px) and (min-height: 2000px) and (orientation: portrait) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1svh 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .main {
+        margin-left: 0;
+        margin-top: 15svh;
+        width: 95svw;
+        height: 40svh;
+        order: 1;
+    }
+
+    .right-screen {
+        margin-left: 0;
+        margin-top: 2svh;
+        margin-bottom: 10svh;
+        width: 95%;
+        align-items: center;
+        order: 2;
+    }
+
+    .screen {
+        width: 65svw;
+        height: clamp(5svh, 6svh, 7svh);
+        font-size: clamp(1.5svh, 1.8svh, 2svh);
+        padding: clamp(1.5svh, 2svh, 2.5svh);
+    }
+
+    .screen-buttons {
+        margin-top: 1.5svh;
+    }
+
+    .screen-buttons button {
+        width: 30svw;
+        font-size: 3svw;
+    }
+
+    /* Hide infoBox on ultra-vertical screens to save space */
+    .infoBox {
+        display: none;
+    }
+
+    /* Optimize header for ultra-vertical screens */
+    header {
+        width: 65%;
+        height: clamp(18svh, 20svh, 22svh);
+        left: -6svh;
+        top: -6svh;
+    }
+
+    header::before {
+        height: clamp(15svh, 17svh, 19svh);
+    }
+
+    /* Adjust blobs positioning */
+    .blobs {
+        top: 2.5svh;
+        left: 4svw;
+    }
+
+    .blobs a:first-child {
+        width: clamp(5svh, 6svh, 7svh);
+    }
+
+    .blobs a:not(:first-child) {
+        width: clamp(1.8svh, 2.2svh, 2.5svh);
+        margin-left: 1.5svw;
+    }
+
+    /* Adjust lights positioning */
+    .lights {
+        right: 4svw;
+        top: clamp(10svh, 12svh, 14svh);
+    }
+
+    .lights div {
+        width: clamp(6svh, 7svh, 8svh);
+        height: clamp(1.2svh, 1.4svh, 1.6svh);
+    }
+
+    /* Optimize footer for ultra-vertical screens */
+    footer {
+        margin-bottom: 1svh;
+        margin-left: 0;
+    }
+
+    .footer-buttons {
+        margin-left: 10svw;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1svw;
+    }
+
+    .footer-buttons button {
+        width: clamp(3.5svh, 4svh, 4.5svh);
+        font-size: clamp(2.5svh, 2.8svh, 3svh);
+    }
+
+    /* Optimize maintext for ultra-vertical screens */
+    .maintext {
+        font-size: clamp(1.8svh, 2svh, 2.2svh);
+        padding: 1svh;
+    }
+
+    /* Optimize inputs for ultra-vertical screens */
+    input {
+        font-size: clamp(2svh, 2.3svh, 2.6svh);
+        padding: 0.8svh;
+        margin: 0.4svh;
+    }
+
+    .pokemonData input {
+        width: clamp(16svh, 20svh, 24svh);
+    }
+
+    .statData input {
+        width: clamp(12svh, 15svh, 18svh);
+    }
+
+    /* Optimize buttons in maintext */
+    .buttons a {
+        width: clamp(3.5svh, 4svh, 4.5svh);
+        font-size: clamp(2.5svh, 2.8svh, 3svh);
+        margin-left: 2.5svw;
+    }
+
+    /* Optimize vents */
+    .vents div {
+        width: clamp(6svh, 7svh, 8svh);
+        height: 0.35svh;
+        margin-top: 0.8svh;
+    }
+
+    /* Optimize navigation */
+    nav {
+        height: clamp(10svh, 12svh, 14svh);
+    }
+
+    nav div a {
+        font-size: clamp(2svh, 2.3svh, 2.6svh);
     }
 }

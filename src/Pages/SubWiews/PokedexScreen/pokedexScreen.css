@@ -63,3 +63,59 @@
      height: 10%;
      width: 100%;
  }
+
+ @media (min-width: 769px) and (max-width: 1024px) {
+
+    .BG_list {
+        margin-left: svw;
+        width: 35svw;
+    }
+
+    .selector {
+
+        margin-left: 4.5svw;
+
+    }
+
+    .identificatore {
+        margin-top: 10svh;
+        margin-left: 8svw;
+        width: 99%;
+    }
+
+    .pkmImg {
+        margin-top: 1svh;
+    }
+ }
+
+ /* Ultra-vertical screens optimization (like 1080x2400 phones) */
+@media (max-width: 1080px) and (min-height: 2000px) and (orientation: portrait) {
+    .BG_pokeball {
+    margin-top: 100px;
+    height: 45svh;
+    width: 15svw;
+
+    background-position: 6.5% 0; /* Positions to hide left 20% */
+}
+
+    .BG_list {
+        margin-left: 5svw;
+        margin-top: 5svh;
+        width: 100svw;
+    }
+
+    .selector {
+        margin-left: -4svw;
+        margin-top: 25svh;
+    }
+
+    .identificatore {
+        margin-top: 8svh;
+        margin-left: 5svw;
+        width: 99%;
+    }
+
+    .pkmImg {
+        margin-top: 2svh;
+    }
+}
